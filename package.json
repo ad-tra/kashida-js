@@ -1,0 +1,32 @@
+{
+  "name": "kashida-js",
+  "version": "1.0.0",
+  "private": true,
+  "description": "KashidaJS",
+  "author": "ad-tra",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^3.10.2",
+    "gatsby-plugin-google-analytics": "^3.10.0",
+    "gatsby-plugin-image": "^1.10.1",
+    "gatsby-plugin-react-helmet": "^4.10.0",
+    "gatsby-plugin-sass": "^4.10.0",
+    "gatsby-plugin-sharp": "^3.10.2",
+    "gatsby-source-filesystem": "^3.10.0",
+    "gatsby-transformer-remark": "^4.7.0",
+    "gatsby-transformer-sharp": "^3.10.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.37.3"
+  }
+}
