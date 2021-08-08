@@ -1,0 +1,27 @@
+.controllers_group{
+    $labelMargin: 7%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &_label{
+        text-transform: uppercase;
+        margin-right: $labelMargin;
+        opacity:0.3;
+    }
+    .rtl{
+        margin-left:$labelMargin;
+        margin-right:0
+    }
+    &_input{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        >*{
+            margin: 0 1em;
+        }
+    }
+    
+}
+.rtl{
+    direction: rtl;
+}

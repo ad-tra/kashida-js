@@ -1,0 +1,28 @@
+.slider{
+    display: flex;
+    align-items: flex-end;
+    .label{
+        margin-right:1em;
+        text-transform: capitalize;
+    }
+    .rc-slider{
+        width: 100px !important;
+        &-track{
+            background-color: black;
+        }
+        &-rail, &-track{
+            height: 2px;
+        }
+        &-handle{
+            border: solid 1.5px black;
+            height: 8px;
+            width: 8px;
+            margin-top:-3px;
+            &:active, &:focus{
+                border-color: inherit;
+                box-shadow: none;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+button{
+    background: transparent;
+    border:none !important;
+    outline: none !important;
+    cursor: pointer;
+}
+
+@import "./colors.module.scss";
+
+@import "./controllers_group";
+@import "./layout";
+@import "./scanner";
+@import "./slider";
+
+@import "./404";
+@import "./index";
+
