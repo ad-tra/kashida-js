@@ -12,7 +12,6 @@ export default function Layout(props) {
             <nav>
                 <ul>
                     <li><Link to="#">What is KashidaJS</Link></li>
-                    <li><Link to="#">How to Use</Link></li>
                 </ul>
             </nav>
             <div id="d_el4" aria-hidden="true"></div>

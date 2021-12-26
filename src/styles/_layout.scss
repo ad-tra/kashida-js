@@ -15,6 +15,10 @@
     nav{
         grid-row:1;
         grid-column: 19/23;
+        @media (max-width: $breakpoint-laptop) {
+            grid-row:1;
+            grid-column: 7/23;
+        }
         ul{
             list-style: none;
             display: flex;
@@ -47,6 +51,10 @@
     .maker_credits{
         grid-row: 10/14;
         grid-column:1/8;
+        @media (max-width: $breakpoint-laptop) {
+            grid-row: 12/14;
+
+        }
         display: flex;
         align-items: flex-end;
         padding: $viewportCornersPadding;
@@ -63,5 +71,10 @@
     #d_el8{
         grid-row: 10/14;
         grid-column:19/23
+    }
+    @media (max-width: $breakpoint-laptop) {
+        #d_el1,#d_el2,#d_el3,#d_el4,#d_el5,#d_el6,#d_el7,#d_el8{
+            display: none;
+        }
     }
 }
