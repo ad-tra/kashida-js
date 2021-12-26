@@ -20,17 +20,26 @@ export default function Index({location}) {
   const handleMagnitude = MagnitudeSliderValue => {
     setKashidaParams([MagnitudeSliderValue, kashidaParams[1]])
   } 
+  let copyClickCount = 0;
   const handleCopy = ()=>{
     document.querySelector('textarea[name="scanner"]').select()
     document.execCommand('copy')
     window.getSelection().removeAllRanges();
     setEventMessage({label:'Text Coppiced Successfully', styles: {color:"green"}})
-    setTimeout(()=>{setEventMessage({label:'', styles: {}})},4000)
+    copyClickCount++;
+    setTimeout(()=>{
+      copyClickCount--;
+      setEventMessage((oldMessage)=>{
+        if(copyClickCount==0) return {label:'', styles: {}}
+        return oldMessage
+      })
+    },3000)
   }
   return (
     <Layout>
       <div className="text_tooling" >
-        <p className= "event-message" style={eventMessage.styles}>{eventMessage.label}</p>
+      {eventMessage.label !== "" && 
+      <p className= "event-message" style={eventMessage.styles}>{eventMessage.label}</p>}
         
         <div className="controllers_group_container"> 
             <button onClick={handleCopy}>Copy</button>
