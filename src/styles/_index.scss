@@ -6,6 +6,30 @@
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
+    .event-message{
+        @keyframes slidein {
+            from {
+                opacity: 0;
+                
+            }
+          
+            20%{
+                opacity: 1
+            }
+            75%{
+                opacity:1
+            }
+            to {
+                opacity: 0;
+            }
+         }
+        position: absolute;
+        top: -1.5em;
+        left:-0.1em;
+        animation-duration: 4s;
+        animation-name: slidein;
+    }
     .controllers_group_container{
         display: flex;
         justify-content: space-between;

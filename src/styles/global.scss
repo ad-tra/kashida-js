@@ -6,10 +6,45 @@
 
 button{
     background: transparent;
-    border:none !important;
+    border: 1px dashed #aaa7bb;
     outline: none !important;
     cursor: pointer;
+    padding: 0.5em;
+    font-size: 1em;
+
 }
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    width: 15px;
+    background: #f3f3f3;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #fff;
+    border: 1px solid #787681;
+
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    border: 1px solid black;
+
+  }
+
+  ::selection {
+    background: #1e1ece; /* WebKit/Blink Browsers */
+    color: white
+  }
+  ::-moz-selection {
+    background: #1e1ece; /* Gecko Browsers */
+    color: white;
+  }
 
 @import "./colors.module.scss";
 
