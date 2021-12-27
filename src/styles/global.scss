@@ -4,6 +4,7 @@
     box-sizing: border-box
 }
 $breakpoint-laptop: 1300px;
+$breakpoint-mobile: 500px;
 
 button{
     background: transparent;
@@ -56,4 +57,5 @@ button{
 
 @import "./404";
 @import "./index";
+@import "./about";
 

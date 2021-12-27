@@ -12,6 +12,7 @@
         grid-column: 2/22;
     }
     .event-message{
+
         @keyframes slidein {
             from {
                 top:-1.2em
@@ -39,13 +40,34 @@
         animation-duration: 3s;
         animation-name: slidein;
         animation-timing-function: ease-in-out;
+        @media (max-width: $breakpoint-mobile) {
+            left: 50%;
+            transform:translateX(-50%) translateY(-3px);
+            width: max-content;
+
+        }
     }
     .controllers_group_container{
         display: flex;
         justify-content: space-between;
+        @media (max-width: $breakpoint-mobile) {
+            flex-direction: column;
+            align-items: flex-start;
+                &:first-child{
+                    order:3       
+                }
+        }
+    }
+    .button-copy{
+        @media (max-width: $breakpoint-mobile) {
+            align-self: normal;
+        }
     }
     .scanner_container{
         flex-grow:1;
+        @media (max-width: $breakpoint-mobile) {
+         order:2;
+        }
     } 
 
 }

@@ -7,17 +7,32 @@
     }
     .rc-slider{
         width: 100px !important;
+        @media (max-width: $breakpoint-mobile) {
+            width: 60px !important;
+        }
         &-track{
-            background-color: black;
+            background-color: #302f36;
+            @media (max-width: $breakpoint-mobile) {
+                background-color: #62606b;
+                border:1px solid black
+             }
         }
         &-rail, &-track{
             height: 2px;
+            @media (max-width: $breakpoint-mobile) {
+             height: 6px;
+            }
         }
         &-handle{
-            border: solid 1.5px black;
+            border: solid 1.5px #302f36;
             height: 8px;
             width: 8px;
             margin-top:-3px;
+            @media (max-width: $breakpoint-mobile) {
+             height: 15px;
+             width: 15px;
+             bottom:-1px
+            };
             &:active, &:focus{
                 border-color: inherit;
                 box-shadow: none;

@@ -25,7 +25,7 @@ export default function Index({location}) {
     document.querySelector('textarea[name="scanner"]').select()
     document.execCommand('copy')
     window.getSelection().removeAllRanges();
-    setEventMessage({label:'Text Coppiced Successfully', styles: {color:"green"}})
+    setEventMessage({label:'Text Coppiced Successfully. مَبرُوك', styles: {color:"green"}})
     copyClickCount++;
     setTimeout(()=>{
       copyClickCount--;
@@ -38,11 +38,10 @@ export default function Index({location}) {
   return (
     <Layout>
       <div className="text_tooling" >
-      {eventMessage.label !== "" && 
-      <p className= "event-message" style={eventMessage.styles}>{eventMessage.label}</p>}
+     
         
         <div className="controllers_group_container"> 
-            <button onClick={handleCopy}>Copy</button>
+            <button className = "button-copy" onClick={handleCopy}>Copy</button>
             <ControllersGroup label = "text">
               <Dropdown onChange={(option) => {setFontFamily(option.value)}}/>
               <Slider label= "size" onChange = {(newFontSize)=>setFontSize(`${newFontSize}em`)} min = {2} max= {5} step={0.5} defaultValue = {4}/>
@@ -76,7 +75,8 @@ export default function Index({location}) {
         </div>
 
 
-
+        {eventMessage.label !== "" && 
+        <p className= "event-message" style={eventMessage.styles}>{eventMessage.label}</p>}
       </div>
     </Layout>  
   )
