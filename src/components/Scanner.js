@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import kashida from "../utils/kashida/kashida"
 
 
@@ -18,7 +18,12 @@ export default function Scanner({magnitude, contrast, customPlaceholder, fontSiz
             return newValue.target.value;
         })
     }
+    useEffect(() => {
+       customPlaceholder = new URL(window.location.href).searchParams.get("customPlaceHolder")  
+        if(customPlaceholder !== null)
+        document.querySelector('textarea').placeholder = kashida(customPlaceholder, 5, 0.5)     
 
+    }, [])
     
     return (
         <textarea 

@@ -57,7 +57,6 @@ export default function Index({location}) {
               contrast = {kashidaParams[1]}
               fontSize={fontSize}
               fontFamily = {fontFamily}
-              customPlaceholder= {location.search === "" ? undefined : location.search.match(/(\?|\&)(customPlaceholder)\=([^&]+)/i)[3]}
               />
         </div>
 
