@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect}  from 'react'
 import Select from 'react-select'
 export default function Dropdown({onChange}) {
     const options = [
@@ -8,7 +8,10 @@ export default function Dropdown({onChange}) {
         { value: 'Amiri, Arial', label: 'Amiri / أمـــــــــــــيري' }
 
     ]
-    const isMobile =window. screen.width < 500;
+    let isMobile = false;
+    useEffect(() => {
+        isMobile = window.screen.width <500;
+    }, [])
     const styles = {
         singleValue:(provided, {data})=>({
             ...provided,
