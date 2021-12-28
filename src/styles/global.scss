@@ -3,22 +3,31 @@
     padding: 0;
     box-sizing: border-box
 }
+body{
+  font-family: Georgia, Times New Roman;
+}
+button{
+  background: transparent;
+  border: 1px dashed #aaa7bb;
+  outline: none !important;
+  cursor: pointer;
+  padding: 0.5em;
+  font-size: 1em;
+
+}
+
 $breakpoint-laptop: 1300px;
 $breakpoint-mobile: 500px;
 
-button{
-    background: transparent;
-    border: 1px dashed #aaa7bb;
-    outline: none !important;
-    cursor: pointer;
-    padding: 0.5em;
-    font-size: 1em;
-
-}
 /* width */
 ::-webkit-scrollbar {
     width: 15px;
-  }
+    @media (max-width: $breakpoint-mobile) {
+      width: 10px;
+      height:9px;
+    }
+}
+
   
   /* Track */
   ::-webkit-scrollbar-track {
@@ -47,6 +56,22 @@ button{
     background: #1e1ece; /* Gecko Browsers */
     color: white;
   }
+
+
+
+
+@font-face {
+  font-family: 'Segoe UI Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Regular'), url('../fonts/SegoeUI.ttf') format('ttf');
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swapp');
+
+
+
 
 @import "./colors.module.scss";
 

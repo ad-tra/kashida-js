@@ -1,54 +1,14 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
 
-## 🚀 Quick start
+# Kashida: What Does It Mean?
 
-1.  **Create a Gatsby site.**
+Kashida refers to a character that represents an elongation in the arabic script (ـــ). It is used for text justification and readability enhancement. In the past, the Kashida was spread on a wide scale. It was used in beautifying the quaran, books, letters, and all kinds of text.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+No Kashida: حكيم / After Kashida: حــــــــكــــيــم
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## Goal of KashidaJS
 
-2.  **Start developing.**
+Sadly, the Kashida didn't survive the technological revolution. Despite the fact that it has a valid unicode character, no one uses it and includes it in his/her online texts. The kashida therefore sleeps in old scriptures and yellow paper.
 
-    Navigate into your new site’s directory and start it up.
+KashidaJS is an effort to revive the kashida. Bring it to the 21st century. This tool provides a text based solution that can be pasted anywhere to enhance the readability and structure of your text. Engage your readers. This is the first tool of its kind as there are no online and easily accessible kashida generators. It is fair to note that Adobe Illustrator provides a visual text justification that can be exported into an image, but can't be pasted. There are also some [latex algorithms](http://andreasmhallberg.github.io/stretchable-kashida/) that generate kashida
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+</div>

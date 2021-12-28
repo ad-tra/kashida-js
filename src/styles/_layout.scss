@@ -19,6 +19,10 @@
             grid-row:1;
             grid-column: 7/23;
         }
+        @media (max-width: $breakpoint-mobile) {
+            grid-row:13/14;
+            grid-column:7/23
+        }
         ul{
             list-style: none;
             display: flex;
@@ -26,7 +30,10 @@
             li{
                 padding:$viewportCornersPadding;
                 a{
-                    color: black;
+                    color: #302f36;
+                    @media (max-width: $breakpoint-mobile) {
+                        color:#aaa7bb;
+                    }
                 }
             }
 
@@ -53,12 +60,15 @@
         grid-column:1/8;
         @media (max-width: $breakpoint-laptop) {
             grid-row: 12/14;
-
         }
+        @media (max-width: $breakpoint-mobile){
+            display: none;;
+        }
+
         display: flex;
         align-items: flex-end;
         padding: $viewportCornersPadding;
-        color:gray;
+        color:#6d6c75;
         a{
             color:inherit;
             margin-left:5px

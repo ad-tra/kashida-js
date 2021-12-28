@@ -2,16 +2,18 @@ import React from 'react'
 import Select from 'react-select'
 export default function Dropdown({onChange}) {
     const options = [
-        { value: 'Segoe UI, Frutiger, Dejavu Sans, Helvetica Neue, Arial, sans-serif', label: 'Segoe UI' },
-        { value: 'strawberry', label: 'Arial' },
-        { value: 'Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif', label: 'Times New Roman' },
-        { value: 'vanilla', label: 'Harrir' }
+        { value: 'Segoe UI Regular, Arial', label: 'Segoe UI / سـاقـوا ' },
+        { value: 'Arial', label: 'Arial / أريــــــــــــــال' },
+        { value: 'Cairo, Arial', label: 'Cairo / القـــاهــرة' },
+        { value: 'Amiri, Arial', label: 'Amiri / أمـــــــــــــيري' }
 
     ]
+    const isMobile =window. screen.width < 500;
     const styles = {
-        singleValue:(provided)=>({
+        singleValue:(provided, {data})=>({
             ...provided,
-            width: "140px !important",
+            width: "119px !important",
+            fontFamily: data.value
         }),
         control:(provided)=>({
             ...provided,
@@ -34,7 +36,7 @@ export default function Dropdown({onChange}) {
             borderLeft: "none",
             borderRight: "none",
             textDecoration: state.isFocused && "underline",
-
+            fontFamily: state.value
 
         })
     }
@@ -43,8 +45,9 @@ export default function Dropdown({onChange}) {
             options = {options}
             styles = {styles}
             isSearchable= {false}
-            defaultValue={ {value: 'vanilla', label: 'Harrir'}}
+            defaultValue={ {value: "", label: 'Pick a Font'}}
             onChange = {onChange}
+            menuPlacement= {isMobile ? "top" : "bottom"}
         />
     )
 }

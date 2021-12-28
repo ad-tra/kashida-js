@@ -8,8 +8,12 @@
     &_label{
         text-transform: uppercase;
         margin-right: $labelMargin;
-        opacity:0.3;
-        display: none;
+        opacity:0.5;
+        @media (max-width: $breakpoint-mobile) {
+            margin: 0 !important;
+            display: none;
+
+        }
     }
     .rtl{
         margin-left:$labelMargin;

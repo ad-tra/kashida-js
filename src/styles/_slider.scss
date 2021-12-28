@@ -13,8 +13,8 @@
         &-track{
             background-color: #302f36;
             @media (max-width: $breakpoint-mobile) {
-                background-color: #62606b;
-                border:1px solid black
+                background-color: #adaabb;
+                border:2px solid black
              }
         }
         &-rail, &-track{
@@ -34,7 +34,7 @@
              bottom:-1px
             };
             &:active, &:focus{
-                border-color: inherit;
+                border-color: #1e1ece;
                 box-shadow: none;
             }
         }

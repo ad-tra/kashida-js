@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import kashida from "../utils/kashida/kashida"
 
 
-export default function Scanner({magnitude, contrast, customPlaceholder, fontSize, fontFamily, ref}) {
+export default function Scanner({magnitude, contrast, customPlaceholder, fontSize, fontFamily}) {
     console.log("magnitude: \t"+ magnitude + '\t\t contrast' + contrast)
 
 
@@ -10,14 +10,16 @@ export default function Scanner({magnitude, contrast, customPlaceholder, fontSiz
     
     const kashidaText = kashida(text,magnitude, contrast)
 
-    const [value, setValue] = useState(null)
+    const [value, setValue] = useState("")
     const handleTextArea = newValue =>{
         console.log('user typed')
         setValue(()=>{
            console.log(kashida(newValue.target.value, magnitude, contrast))
             return newValue.target.value;
-    })
+        })
     }
+
+    
     return (
         <textarea 
             name="scanner" 

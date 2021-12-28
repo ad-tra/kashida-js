@@ -9,8 +9,8 @@ import Dropdown from '../components/Dropdown'
 
 export default function Index({location}) {
   const [kashidaParams, setKashidaParams] = useState([4,0.5])
-  const [fontSize, setFontSize] = useState("4em")
-  const [fontFamily, setFontFamily] = useState("inherit")
+  const [fontSize, setFontSize] = useState("3em")
+  const [fontFamily, setFontFamily] = useState("Segoe UI")
   const [eventMessage, setEventMessage] = useState({label:"",styles:{}})
 
 
@@ -20,20 +20,22 @@ export default function Index({location}) {
   const handleMagnitude = MagnitudeSliderValue => {
     setKashidaParams([MagnitudeSliderValue, kashidaParams[1]])
   } 
-  let copyClickCount = 0;
+  
+
   const handleCopy = ()=>{
     document.querySelector('textarea[name="scanner"]').select()
     document.execCommand('copy')
+    const copyText = window.getSelection().toString();
     window.getSelection().removeAllRanges();
-    setEventMessage({label:'Text Coppiced Successfully. مَبرُوك', styles: {color:"green"}})
-    copyClickCount++;
+
+    setEventMessage((oldState)=>{
+      if(eventMessage.label.includes('Text Copied'))return oldState; 
+      if(copyText === "")  return {label:'Type a word or two before copying', styles: {color:"#1e1ece"}}
+      return {label:'Text Copied Successfully. مَبرُوك', styles: {color:"green"}}
+    })
     setTimeout(()=>{
-      copyClickCount--;
-      setEventMessage((oldMessage)=>{
-        if(copyClickCount==0) return {label:'', styles: {}}
-        return oldMessage
-      })
-    },3000)
+      setEventMessage(({label:'', styles: {}}))
+    },4000)
   }
   return (
     <Layout>
@@ -44,7 +46,7 @@ export default function Index({location}) {
             <button className = "button-copy" onClick={handleCopy}>Copy</button>
             <ControllersGroup label = "text">
               <Dropdown onChange={(option) => {setFontFamily(option.value)}}/>
-              <Slider label= "size" onChange = {(newFontSize)=>setFontSize(`${newFontSize}em`)} min = {2} max= {5} step={0.5} defaultValue = {4}/>
+              <Slider label= "size" onChange = {(newFontSize)=>setFontSize(`${newFontSize}em`)} min = {2} max= {5} step={0.5} defaultValue = {fontSize.match(/\d*/)[0]}/>
             </ControllersGroup>  
         </div>
             
@@ -55,7 +57,8 @@ export default function Index({location}) {
               contrast = {kashidaParams[1]}
               fontSize={fontSize}
               fontFamily = {fontFamily}
-              customPlaceholder= {location.search === "" ? undefined : location.search.match(/(\?|\&)(customPlaceholder)\=([^&]+)/)[3]}/>
+              customPlaceholder= {location.search === "" ? undefined : location.search.match(/(\?|\&)(customPlaceholder)\=([^&]+)/i)[3]}
+              />
         </div>
 
 

@@ -8,7 +8,7 @@
     flex-direction: column;
     position: relative;
     @media (max-width: $breakpoint-laptop) {
-        grid-row: 3/12;
+        grid-row: 2/12;
         grid-column: 2/22;
     }
     .event-message{
@@ -54,11 +54,22 @@
             flex-direction: column;
             align-items: flex-start;
                 &:first-child{
-                    order:3       
+                    order:3;
+                    flex-direction:column-reverse;
+                    >div{
+                        margin: 0.5em 0;
+                    }  
+                }
+                &:nth-child(3){
+                   flex-direction: row;
+                   overflow-x: scroll;
+                   overflow-y: hidden;
+                   align-items: center;
                 }
         }
     }
     .button-copy{
+        border-color: #1e1ece;
         @media (max-width: $breakpoint-mobile) {
             align-self: normal;
         }
@@ -67,6 +78,7 @@
         flex-grow:1;
         @media (max-width: $breakpoint-mobile) {
          order:2;
+         font-size:0.5em;
         }
     } 
 

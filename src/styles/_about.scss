@@ -1,5 +1,23 @@
-.about-page{
-    grid-row: 3/10;
-    grid-column: 5/19;
-    padding: 1.5em;
+.about-page {
+  grid-row: 3/10;
+  grid-column: 5/19;
+  padding: 1.5em;
+  max-width: 600px;
+  color: #302f36;
+  @media (max-width: $breakpoint-laptop) {
+    grid-row: 2/12;
+  }
+  @media (max-width: $breakpoint-mobile) {
+    grid-row: 2/13;
+    grid-column: 1/22;
+  }
+  p{
+    margin: 1em 0
+  }
+  h1{
+    margin-bottom: 1em;
+  }
+  h2,h3,h4,h5,h6{
+    margin-top: 1.5em;
+  }
 }
