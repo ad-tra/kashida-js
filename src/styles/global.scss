@@ -13,11 +13,15 @@ button{
   cursor: pointer;
   padding: 0.5em;
   font-size: 1em;
-
+  background: none;
+  color: #302f36;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 $breakpoint-laptop: 1400px;
-$breakpoint-mobile: 500px;
+$breakpoint-mobile: 995px;
 
 /* width */
 ::-webkit-scrollbar {
@@ -58,7 +62,11 @@ $breakpoint-mobile: 500px;
   }
 
 
-
+@media (prefers-color-scheme: dark) {
+    body {
+      filter: invert(0.97) sepia(0.8);
+    }
+}
 
 @font-face {
   font-family: 'Segoe UI Regular';

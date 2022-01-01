@@ -6,7 +6,7 @@ export default function Scanner({magnitude, contrast, customPlaceholder, fontSiz
     console.log("magnitude: \t"+ magnitude + '\t\t contrast' + contrast)
 
 
-    const text = customPlaceholder === undefined ?  "نص حكيم له سر قاطع وذو شأن عظيم مكتوب على ثوب أخضر ومغلف بجلد أزرق" : decodeURI(customPlaceholder)
+    const text = customPlaceholder === null || customPlaceholder === undefined ? "هنا إكتب نصا حكيما" : decodeURI(customPlaceholder)
     
     const kashidaText = kashida(text,magnitude, contrast)
 
@@ -18,12 +18,7 @@ export default function Scanner({magnitude, contrast, customPlaceholder, fontSiz
             return newValue.target.value;
         })
     }
-    useEffect(() => {
-       customPlaceholder = new URL(window.location.href).searchParams.get("customPlaceHolder")  
-        if(customPlaceholder !== null)
-        document.querySelector('textarea').placeholder = kashida(customPlaceholder, 5, 0.5)     
 
-    }, [])
     
     return (
         <textarea 

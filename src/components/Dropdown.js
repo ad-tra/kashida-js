@@ -1,5 +1,6 @@
-import React, {useEffect}  from 'react'
+import React, {useEffect, useState}  from 'react'
 import Select from 'react-select'
+
 export default function Dropdown({onChange}) {
     const options = [
         { value: 'Segoe UI Regular, Arial', label: 'Segoe UI / سـاقـوا ' },
@@ -8,10 +9,10 @@ export default function Dropdown({onChange}) {
         { value: 'Amiri, Arial', label: 'Amiri / أمـــــــــــــيري' }
 
     ]
-    let isMobile = false;
+    const [isMobile, setIsMobile] = useState(false)
     useEffect(() => {
-        isMobile = window.screen.width <500;
-    }, [])
+        if(window.screen.width <900) setIsMobile(true)
+    },[])
     const styles = {
         singleValue:(provided, {data})=>({
             ...provided,
@@ -43,9 +44,10 @@ export default function Dropdown({onChange}) {
 
         })
     }
+    console.log(isMobile)
     return (
         <Select
-            options = {options}
+            options = {!isMobile ? options: options.map(({value, label}) =>( {value:value, label: label.replaceAll("ـ", "")} ))}
             styles = {styles}
             isSearchable= {false}
             defaultValue={ {value: "", label: 'Pick a Font'}}

@@ -9,6 +9,7 @@
     grid-template-rows: repeat(13, 1fr); 
     min-height: 100vh;
     min-width: 100vw;
+    background: white;
     >*{
         border: 1px solid rgba(0, 0, 0, 0.07)
     }

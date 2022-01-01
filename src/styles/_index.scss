@@ -1,7 +1,7 @@
 .text_tooling{
     grid-row: 3/10;
     grid-column: 5/19;
-    border: 1px solid black;
+    border: 1px solid #302f36;
     padding: 1.5em;
     min-height: 100%;
     display: flex;
@@ -11,6 +11,10 @@
         grid-row: 2/12;
         grid-column: 2/22;
     }
+    @media (max-width: $breakpoint-mobile) {
+        padding-top:0
+    }
+
     .event-message{
 
         position: absolute;
@@ -35,12 +39,16 @@
                     >div{
                         margin: 0.5em 0;
                     }  
+                    width: 100%;
                 }
                 &:nth-child(3){
                    flex-direction: row;
-                   overflow-x: scroll;
+                   overflow-x: auto;
                    overflow-y: hidden;
                    align-items: center;
+                   padding-top:1.5em;
+                   width:calc(100% + 1.5em);
+                   >.controllers_group {width: initial !important};
                 }
         }
     }
