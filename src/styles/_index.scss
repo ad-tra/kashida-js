@@ -13,33 +13,9 @@
     }
     .event-message{
 
-        @keyframes slidein {
-            from {
-                top:-1.2em
-            }
-            5%{
-                opacity: 0;
-
-            }
-            15%{
-                opacity: 1;
-                top: -1.5em
-            }
-            85%{
-                opacity:1;
-                top: -1.5em
-            }
-
-            to {
-                top:-1.2em;
-            }
-         }
         position: absolute;
         left:-0.1em;
         opacity:0;
-        animation-duration: 3s;
-        animation-name: slidein;
-        animation-timing-function: ease-in-out;
         @media (max-width: $breakpoint-mobile) {
             left: 50%;
             transform:translateX(-50%) translateY(-3px);

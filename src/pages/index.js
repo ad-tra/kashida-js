@@ -1,4 +1,5 @@
 import React, {useState, useRef} from 'react';
+import {motion, AnimatePresence} from 'framer-motion'
 
 import Layout from '../components/Layout';
 import ControllersGroup from '../components/ControllersGroup'
@@ -77,8 +78,18 @@ export default function Index({location}) {
         </div>
 
 
-        {eventMessage.label !== "" && 
-        <p className= "event-message" style={eventMessage.styles}>{eventMessage.label}</p>}
+        <AnimatePresence>
+        {eventMessage.label !== "" && (
+          <motion.p 
+            className= "event-message" 
+            initial = {{opacity: 0, top:'-1.2em'}}
+            animate= {{opacity: 1, top:'-1.5em'}}  
+            exit= {{opacity:0, top: '-1.4em'}}
+            style={eventMessage.styles} >
+            {eventMessage.label}
+          </motion.p>
+        )}
+      </AnimatePresence>
       </div>
     </Layout>  
   )
