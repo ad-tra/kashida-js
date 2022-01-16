@@ -8,32 +8,46 @@
     grid-template-columns: repeat(22, 1fr);
     grid-template-rows: repeat(13, 1fr); 
     min-height: 100vh;
-    min-width: 100vw;
     background: white;
+    transition: filter 0.5s ease;
     >*{
         border: 1px solid rgba(0, 0, 0, 0.07)
     }
     nav{
-        grid-row:1;
+        grid-row: 1;
         grid-column: 19/23;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
         @media (max-width: $breakpoint-laptop) {
             grid-row:1;
             grid-column: 7/23;
         }
         @media (max-width: $breakpoint-mobile) {
             grid-row:13/14;
-            grid-column:7/23
+            grid-column:2/22
+
         }
         ul{
             list-style: none;
             display: flex;
             justify-content: flex-end;
+            padding-right: 2vw;
+            @media (max-width: $breakpoint-mobile) {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
             li{
-                padding:$viewportCornersPadding;
                 a{
                     color: #302f36;
+                    display: block;
+                    padding:$viewportCornersPadding;
                     @media (max-width: $breakpoint-mobile) {
                         color:#aaa7bb;
+                    }
+                    &[aria-current="page"]{
+                        display: none;
                     }
                 }
             }

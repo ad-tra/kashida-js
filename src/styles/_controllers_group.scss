@@ -32,6 +32,7 @@
         align-items: center;
         @media (max-width: $breakpoint-mobile) {
             width: 100%;
+            padding-right: 1.5em;
         }
         >*{
             margin: 0 1em;

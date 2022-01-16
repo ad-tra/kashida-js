@@ -48,7 +48,12 @@
                    align-items: center;
                    padding-top:1.5em;
                    width:calc(100% + 1.5em);
-                   >.controllers_group {width: initial !important};
+                   >.controllers_group {
+                       width: initial !important;
+                    &_input{
+                        padding-right: 1.5em
+                    }
+                    };
                 }
         }
     }

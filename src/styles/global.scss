@@ -8,7 +8,7 @@ body{
 }
 button{
   background: transparent;
-  border: 1px dashed #aaa7bb;
+  border: 1px dashed #1e1ece;
   outline: none !important;
   cursor: pointer;
   padding: 0.5em;
@@ -37,12 +37,14 @@ $breakpoint-mobile: 995px;
   ::-webkit-scrollbar-track {
     width: 15px;
     background: #f3f3f3;
+
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #fff;
     border: 1px solid #787681;
+
 
   }
   
@@ -63,9 +65,16 @@ $breakpoint-mobile: 995px;
 
 
 @media (prefers-color-scheme: dark) {
-    body {
+    .layout {
       filter: invert(0.97) sepia(0.8);
     }
+}
+.dark{
+  filter: invert(0.97) sepia(0.8);
+
+}
+.light{
+  filter: none !important;
 }
 
 @font-face {
