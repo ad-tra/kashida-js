@@ -38,6 +38,7 @@ export default function Index({location}) {
       setEventMessage(({label:'', styles: {}}))
     },4000)
   }
+  console.log(Layout)
   return (
     <Layout>
       <div className="text_tooling" >

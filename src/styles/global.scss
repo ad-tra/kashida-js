@@ -69,11 +69,11 @@ $breakpoint-mobile: 995px;
       filter: invert(0.97) sepia(0.8);
     }
 }
-.dark{
+.dark .layout{
   filter: invert(0.97) sepia(0.8);
 
 }
-.light{
+.light .layout{
   filter: none !important;
 }
 

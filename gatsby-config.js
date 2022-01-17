@@ -6,6 +6,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
+    'gatsby-plugin-dark-mode',
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {

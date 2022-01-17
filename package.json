@@ -17,6 +17,7 @@
   "dependencies": {
     "framer-motion": "^5.5.5",
     "gatsby": "^3.10.2",
+    "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-google-analytics": "^3.10.0",
     "gatsby-plugin-image": "^1.10.1",
     "gatsby-plugin-react-helmet": "^4.10.0",
