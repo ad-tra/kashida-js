@@ -11,3 +11,31 @@
         opacity: 0.4;
     }
 }
+
+.box{
+    position: absolute;
+    cursor: move;
+    color: black;
+    border-radius: 5px;
+    padding: 1em;
+    margin: auto;
+    user-select: none;
+    z-index: 1;
+    width: 622px;
+
+    .react-simple-keyboard{
+        font-family: initial;
+        border-radius: 0;
+        background-color: white;
+        border: 1px solid #222;
+        padding: 1.5em;
+        box-sizing: content-box;
+        .hg-button, .hg-standardBtn{
+            border: 1px dashed  rgb(184, 184, 184);
+            border-radius: 0;
+        }
+        .hg-functionBtn, [data-skbtn=".com"], [data-skbtn="@"]{
+            color: #737373;
+        }
+    }
+}

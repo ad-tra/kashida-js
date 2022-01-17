@@ -1,26 +1,52 @@
 import React, {useState, useEffect} from 'react'
+import Keyboard from 'react-simple-keyboard';
+import 'react-simple-keyboard/build/css/index.css';
+import layout from 'simple-keyboard-layouts/build/layouts/arabic';
+import Draggable from 'react-draggable';
+
+
+
 import kashida from "../utils/kashida/kashida"
 
+export default function Scanner({magnitude, contrast,isKeyboardVisible, fontSize, fontFamily}) {
 
-export default function Scanner({magnitude, contrast, customPlaceholder, fontSize, fontFamily}) {
-    console.log("magnitude: \t"+ magnitude + '\t\t contrast' + contrast)
-
-
-    const text = customPlaceholder === null || customPlaceholder === undefined ? "هنا إكتب نصا حكيما" : decodeURI(customPlaceholder)
+    const [virtualInput, setVirtualInput] = useState("")
+    const [placeholder, setPlaceholder] = useState("")
+    useEffect(() => {
+        let customPlaceholder = new URLSearchParams(window.location.search).get("customPlaceholder")
+        setPlaceholder(()=>{
+            if(customPlaceholder !== null) 
+            return  decodeURI(customPlaceholder)
+            return  "هنا إكتب نصا حكيما";
+        })
+    }, [])
     
-    const kashidaText = kashida(text,magnitude, contrast)
+    const kashidaPlaceholder = kashida(placeholder,magnitude, contrast)
 
     const [value, setValue] = useState("")
     const handleTextArea = newValue =>{
-        console.log('user typed')
-        setValue(()=>{
-           console.log(kashida(newValue.target.value, magnitude, contrast))
-            return newValue.target.value;
-        })
+        setValue(()=>newValue.target.value )
     }
 
-    
+
     return (
+        <>
+         {isKeyboardVisible&& 
+        <Draggable defaultPosition = {{x: 48, y: 10}} >
+            <div className="box">
+            <Keyboard  
+                layout={layout.layout}
+                onChange={input => {
+                    setVirtualInput(input)
+                    console.log(input)
+                    console.log(input.length)
+                    console.log(input.charAt(input.length - 2))
+                    setValue(oldValue =>  oldValue + input.charAt(input.length -2))
+                }}
+                rtl
+            />
+            </div>
+        </Draggable>}
         <textarea 
             name="scanner" 
             spellCheck= "false"
@@ -29,9 +55,10 @@ export default function Scanner({magnitude, contrast, customPlaceholder, fontSiz
             dir = "rtl" 
             value = {kashida(value, magnitude, contrast)}
             onChange = {handleTextArea}
-            placeholder = {kashidaText }
+            placeholder = {kashidaPlaceholder }
             style = {{"fontSize": fontSize, "fontFamily": fontFamily}}
         />
+        </>
         
     )
 }

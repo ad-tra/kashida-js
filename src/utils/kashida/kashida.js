@@ -32,9 +32,9 @@ let  kashida = (nudeText, insertionFreq = 3, insertionContrast = 0.8) => {
                 
             }
         }
-        console.log("\n".repeat(3))
-        console.log(distribution)
-        console.log(`the sum of the distribution is:  ${distribution.filter(el => el> 0).reduce((el, a) => el + a, 0)}. \tit should be:  ${insertionFreq}`)
+       // console.log("\n".repeat(3))
+       // console.log(distribution)
+       // console.log(`the sum of the distribution is:  ${distribution.filter(el => el> 0).reduce((el, a) => el + a, 0)}. \tit should be:  ${insertionFreq}`)
         //console.log(distribution.map(el => Math.round(el)))
        // console.log(distribution)
         let countOfAddedKashida = 0

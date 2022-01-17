@@ -19,6 +19,8 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        z-index: 4;
+        background-color: #ffffffd9;
         @media (max-width: $breakpoint-laptop) {
             grid-row:1;
             grid-column: 7/23;

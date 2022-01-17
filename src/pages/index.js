@@ -1,6 +1,9 @@
 import React, {useState, useRef} from 'react';
 import {motion, AnimatePresence} from 'framer-motion'
 
+
+
+
 import Layout from '../components/Layout';
 import ControllersGroup from '../components/ControllersGroup'
 import Scanner from '../components/Scanner'
@@ -8,12 +11,12 @@ import Slider from '../components/Slider'
 import Dropdown from '../components/Dropdown'
 
 
-export default function Index({location}) {
+export default function Index() {
   const [kashidaParams, setKashidaParams] = useState([4,0.5])
   const [fontSize, setFontSize] = useState("3em")
   const [fontFamily, setFontFamily] = useState("Segoe UI")
   const [eventMessage, setEventMessage] = useState({label:"",styles:{}})
-
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false)
 
   const handleContrast = contrastSliderValue => {
     setKashidaParams([kashidaParams[0], contrastSliderValue])
@@ -31,21 +34,33 @@ export default function Index({location}) {
 
     setEventMessage((oldState)=>{
       if(eventMessage.label.includes('Text Copied'))return oldState; 
-      if(copyText === "")  return {label:'Type a word or two before copying', styles: {color:"#1e1ece"}}
+      if(copyText === "")  return {label:'Type an arabic word or two before copying', styles: {color:"#1e1ece"}}
       return {label:'Text Copied Successfully. مَبرُوك', styles: {color:"green"}}
     })
     setTimeout(()=>{
       setEventMessage(({label:'', styles: {}}))
     },4000)
   }
-  console.log(Layout)
+
+  const toggleKeyboardVisibility = ()=>{
+    setIsKeyboardVisible(oldState =>!oldState)
+  }
+
   return (
     <Layout>
       <div className="text_tooling" >
-     
         
+
+
+
         <div className="controllers_group_container"> 
-            <button className = "button-copy" onClick={handleCopy}>Copy</button>
+            <div className="buttons">
+              <button className = "button-copy" onClick={handleCopy}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" xmlSpace="preserve"><path d="M815 780a35 35 0 0 1 0-70c19 0 35-16 35-35V115c0-19-16-35-35-35H395c-19 0-35 16-35 35a35 35 0 0 1-70 0c0-58 47-105 105-105h420c58 0 105 47 105 105v560c0 58-47 105-105 105z" /><path d="M605 990H185c-58 0-105-47-105-105V325c0-58 47-105 105-105h420c58 0 105 47 105 105v560c0 58-47 105-105 105zM185 290c-19 0-35 16-35 35v560c0 19 16 35 35 35h420c19 0 35-16 35-35V325c0-19-16-35-35-35H185z" /></svg>
+                Copy
+              </button>
+              <button className="button-keyboard" onClick = {toggleKeyboardVisibility}>Keyboard</button>
+            </div> 
             <ControllersGroup label = "text">
               <Dropdown onChange={(option) => {setFontFamily(option.value)}}/>
               <Slider label= "size" onChange = {(newFontSize)=>setFontSize(`${newFontSize}em`)} min = {2} max= {5} step={0.5} defaultValue = {fontSize.match(/\d*/)[0]}/>
@@ -59,6 +74,7 @@ export default function Index({location}) {
               contrast = {kashidaParams[1]}
               fontSize={fontSize}
               fontFamily = {fontFamily}
+              isKeyboardVisible = {isKeyboardVisible}
               />
         </div>
 

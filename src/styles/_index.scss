@@ -11,15 +11,14 @@
         grid-row: 2/12;
         grid-column: 2/22;
     }
-    @media (max-width: $breakpoint-mobile) {
-        padding-top:0
-    }
+
 
     .event-message{
 
         position: absolute;
         left:-0.1em;
         opacity:0;
+        z-index: 4;
         @media (max-width: $breakpoint-mobile) {
             left: 50%;
             transform:translateX(-50%) translateY(-3px);
@@ -34,8 +33,7 @@
             flex-direction: column;
             align-items: flex-start;
                 &:first-child{
-                    order:3;
-                    flex-direction:column-reverse;
+                    flex-direction:column;
                     >div{
                         margin: 0.5em 0;
                     }  
@@ -57,16 +55,36 @@
                 }
         }
     }
-    .button-copy{
-        border-color: #1e1ece;
-        @media (max-width: $breakpoint-mobile) {
-            align-self: normal;
+    .buttons{
+        @media (max-width: $breakpoint-mobile){
+            width: 100%;
+        }
+        display: flex;
+        .button-copy{
+            border-color: #1e1ece;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @media (max-width: $breakpoint-mobile) {
+                width: 100%;
+            }
+            svg{
+                height: 0.9em;
+                margin-right: 0.6em;
+                margin-left: 0.2em;
+            }
+        }
+        .button-keyboard{
+            margin-left:0.5em;
+            @media (max-width: $breakpoint-mobile) {
+                display: none;
+            }
         }
     }
+
     .scanner_container{
         flex-grow:1;
         @media (max-width: $breakpoint-mobile) {
-         order:2;
          font-size:0.5em;
         }
     } 

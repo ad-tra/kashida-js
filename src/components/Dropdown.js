@@ -44,7 +44,6 @@ export default function Dropdown({onChange}) {
 
         })
     }
-    console.log(isMobile)
     return (
         <Select
             options = {!isMobile ? options: options.map(({value, label}) =>( {value:value, label: label.replaceAll("ـ", "")} ))}
